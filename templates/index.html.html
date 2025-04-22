@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>狗狗品種與情緒辨識</title>
+</head>
+<body>
+  <h1>即時狗狗辨識 🐶</h1>
+
+  <video id="video" width="320" height="240" autoplay></video>
+  <br>
+  <button id="uploadBtn">拍照並辨識</button>
+
+  <h2 id="breedResult">品種：</h2>
+  <h2 id="emotionResult">情緒：</h2>
+
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>狗狗品種與情緒辨識</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="/static/manifest.json">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>📷 狗狗辨識系統</h2>
+  <video id="video" autoplay playsinline></video>
+  <br />
+  <button id="uploadBtn">📸 立即辨識</button>
+  <canvas id="canvas" style="display: none;"></canvas>
+  <div id="result">等待中...</div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/static/service-worker.js');
+    }
+  </script>
+</body>
+</html>
